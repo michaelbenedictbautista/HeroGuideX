@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Grey"
+    tools:context=".edit_hero.EditHeroScrollingFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="14dp"
+            app:layout_constraintGuide_percent=".03"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_begin="352dp"
+            app:layout_constraintGuide_percent=".97" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_begin="335dp"
+            app:layout_constraintGuide_percent=".97"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Edit hero"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editNameEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:ems="10"
+            android:hint="Type hero name....."
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            android:textColorHint="@color/Grey"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:text="Hero name"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/editNameEditText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/editRoleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:text="Role"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/editRoleSpinner"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <Spinner
+            android:id="@+id/editRoleSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:backgroundTint="@color/BlueGreen"
+            app:layout_constraintBottom_toBottomOf="@+id/editRoleTextView"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/editRoleTextView"
+            app:layout_constraintTop_toTopOf="@+id/editRoleTextView" />
+
+        <EditText
+            android:id="@+id/editHistoryEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:ems="10"
+            android:hint="Type hero history here...."
+            android:inputType="textMultiLine|textPersonName"
+            android:textColor="@color/black"
+            android:textColorHint="@color/Grey"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:text="History"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/editHistoryEditText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/editDefProgTextView" />
+
+        <TextView
+            android:id="@+id/addDamageTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:text="Attack Damage"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/editDamageSeekBar"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/editRoleTextView" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:text="Attack Speed"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/editSpeedSeekBar"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/editDmgProgTextView" />
+
+        <SeekBar
+            android:id="@+id/editDamageSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:isScrollContainer="true"
+            android:scrollIndicators="left|right"
+            android:secondaryProgressTint="@color/BlueGreen"
+            android:soundEffectsEnabled="true"
+            app:layout_constraintBottom_toBottomOf="@+id/addDamageTextView"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/addDamageTextView"
+            app:layout_constraintTop_toTopOf="@+id/addDamageTextView" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:text="Defense"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/editDefenseSeekBar"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/editSpdProgTextView" />
+
+        <SeekBar
+            android:id="@+id/editSpeedSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:contextClickable="true"
+            android:isScrollContainer="true"
+            android:scrollIndicators="left|right"
+            android:secondaryProgressTint="@color/BlueGreen"
+            android:soundEffectsEnabled="true"
+            app:layout_constraintBottom_toBottomOf="@+id/textView7"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView7"
+            app:layout_constraintTop_toTopOf="@+id/textView7" />
+
+        <SeekBar
+            android:id="@+id/editDefenseSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:contextClickable="true"
+            android:isScrollContainer="true"
+            android:scrollIndicators="left|right"
+            android:secondaryProgressTint="@color/BlueGreen"
+            android:soundEffectsEnabled="true"
+            app:layout_constraintBottom_toBottomOf="@+id/textView8"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView8"
+            app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+        <ImageView
+            android:id="@+id/editImageImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/hero_6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="Select image"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/editImageSpinner"
+            app:layout_constraintEnd_toStartOf="@+id/editImageSpinner"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+            app:layout_constraintTop_toTopOf="@+id/editImageSpinner" />
+
+        <Spinner
+            android:id="@+id/editImageSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/BlueGreen"
+            android:foregroundTint="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView11"
+            app:layout_constraintTop_toBottomOf="@+id/editImageImageView" />
+
+        <Button
+            android:id="@+id/editHeroSaveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:backgroundTint="@color/BlueGreen"
+            android:text="Save"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editHeroCancelButton"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/editHeroCancelButton"
+            app:layout_constraintTop_toTopOf="@+id/editHeroCancelButton" />
+
+        <Button
+            android:id="@+id/editHeroCancelButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="4dp"
+            android:backgroundTint="#00A6A6A6"
+            android:text="Cancel"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/editHeroSaveButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/editHistoryEditText"
+            app:strokeColor="@color/BlueGreen"
+            app:strokeWidth="2dp" />
+
+        <TextView
+            android:id="@+id/editDmgProgTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="8sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/editDamageSeekBar"
+            tools:text="0-100" />
+
+        <TextView
+            android:id="@+id/editSpdProgTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="8sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/editSpeedSeekBar"
+            tools:text="0-100" />
+
+        <TextView
+            android:id="@+id/editDefProgTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="8sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/editDefenseSeekBar"
+            tools:text="0-100" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".tutorial_page.ui.TutorialFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".03" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".97" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".03" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".97" />
+
+        <ImageView
+            android:id="@+id/tutorialImageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:contentDescription="Tutorial image"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/tutorialCreateHeroTextView"
+            tools:ignore="ImageContrastCheck"
+            tools:src="@drawable/clock_tutorial" />
+
+        <ImageButton
+            android:id="@+id/tutorialForwardImageButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:elevation="8sp"
+            android:longClickable="false"
+            android:minHeight="48dp"
+            android:src="@drawable/ic_forward"
+            app:layout_constraintBottom_toBottomOf="@+id/tutorialImageView"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="@+id/tutorialImageView" />
+
+        <TextView
+            android:id="@+id/tutorialCreateHeroTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tutorialCreateHeroTextView"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+        <TextView
+            android:id="@+id/tutorialDescriptionTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="0sp"
+            android:text="Heroes are the essential element of Dota 2, as the course of the match is dependent on their intervention. During a match, two opposing teams select five out of 123 heroes that accumulate experience and gold to grow stronger and gain new abilities in order to destroy the opponent's Ancient."
+            android:textAlignment="center"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/tutorialImageView" />
+
+        <ImageButton
+            android:id="@+id/tutorialBackwardImageButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:elevation="8sp"
+            android:minHeight="48dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="@+id/tutorialImageView"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/tutorialImageView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

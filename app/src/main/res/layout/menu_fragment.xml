@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/white"
+    tools:context=".menu_page.MenuFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".03" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".97" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".03" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".97" />
+
+        <ImageView
+            android:id="@+id/menuHeroImageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/hero_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline10"
+            app:srcCompat="@drawable/bristle_menu" />
+
+        <TextView
+            android:id="@+id/menuResultTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="No selected hero"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline13"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline12"
+            app:layout_constraintTop_toBottomOf="@+id/menuTotalRegTextView" />
+
+        <EditText
+            android:id="@+id/menuFindIdEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:hint="Type hero ID here..... "
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:textColorHint="@color/Grey"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toStartOf="@+id/guideline13"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline12"
+            app:layout_constraintTop_toBottomOf="@+id/menuResultTextView" />
+
+        <Button
+            android:id="@+id/menuFindHeroByIdButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#00BCD4"
+            android:text="Find hero by ID"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/guideline13"
+            app:layout_constraintStart_toStartOf="@+id/guideline12"
+            app:layout_constraintTop_toBottomOf="@+id/menuFindIdEditText" />
+
+        <Button
+            android:id="@+id/menuViewAllHeroButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#00BCD4"
+            android:text="View alll heroes"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/guideline13"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline12"
+            app:layout_constraintTop_toBottomOf="@+id/menuDeleteHeroByIdButton" />
+
+        <Button
+            android:id="@+id/menuDeleteHeroByIdButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#00BCD4"
+            android:text="Delete hero"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/guideline13"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline12"
+            app:layout_constraintTop_toBottomOf="@+id/menuFindHeroByIdButton" />
+
+        <TextView
+            android:id="@+id/menuUserNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Hello"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline10" />
+
+        <TextView
+            android:id="@+id/menuTotalRegTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Total monster registered"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline13"
+            app:layout_constraintStart_toStartOf="@+id/guideline12"
+            app:layout_constraintTop_toBottomOf="@+id/menuHeroImageView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

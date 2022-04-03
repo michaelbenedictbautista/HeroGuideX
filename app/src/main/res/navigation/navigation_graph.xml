@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/landingFragment">
+
+    <fragment
+        android:id="@+id/landingFragment"
+        android:name="com.ait8926.heroguidex.landing_page.ui.LandingWelcomeFragment"
+        android:label="landing_fragment"
+        tools:layout="@layout/landing_welcome_fragment" >
+        <action
+            android:id="@+id/action_landingFragment_to_tutorialFragment"
+            app:destination="@id/tutorialFragment" />
+        <action
+            android:id="@+id/action_landingFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tutorialFragment"
+        android:name="com.ait8926.heroguidex.tutorial_page.ui.TutorialFragment"
+        android:label="TutorialFragment"
+        tools:layout="@layout/tutorial_fragment">
+        <action
+            android:id="@+id/action_tutorialFragment_to_landingFragment"
+            app:destination="@id/landingFragment"
+            app:popUpTo="@id/landingFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_tutorialFragment_to_collectionFragment"
+            app:destination="@id/collectionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/collectionFragment"
+        android:name="com.ait8926.heroguidex.collection_page.CollectionFragment"
+        android:label="CollectionFragment"
+        tools:layout="@layout/collection_fragment">
+
+        <action
+            android:id="@+id/action_collectionFragment_to_tutorialFragment"
+            app:destination="@id/tutorialFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.ait8926.heroguidex.menu_page.MenuFragment"
+        android:label="menu_fragment"
+        tools:layout="@layout/menu_fragment" >
+        <action
+            android:id="@+id/action_menuFragment_to_heroFragment"
+            app:destination="@id/heroFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_landingFragment"
+            app:destination="@id/landingFragment"
+            app:popUpTo="@id/landingFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/heroFragment"
+        android:name="com.ait8926.heroguidex.hero.ui.HeroFragment"
+        android:label="hero_fragment"
+        tools:layout="@layout/hero_fragment" >
+        <action
+            android:id="@+id/action_heroFragment_to_addHeroScrollingFragment"
+            app:destination="@id/addHeroScrollingFragment" />
+        <action
+            android:id="@+id/action_heroFragment_to_editHeroScrollingFragment"
+            app:destination="@id/editHeroScrollingFragment"
+            app:popUpTo="@id/heroFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/addHeroScrollingFragment"
+        android:name="com.ait8926.heroguidex.add.AddHeroScrollingFragment"
+        android:label="add_hero_scrolling_fragment"
+        tools:layout="@layout/add_hero_scrolling_fragment" >
+        <action
+            android:id="@+id/action_addHeroScrollingFragment_to_heroFragment"
+            app:destination="@id/heroFragment"
+            app:popUpTo="@id/heroFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/editHeroScrollingFragment"
+        android:name="com.ait8926.heroguidex.edit_hero.EditHeroScrollingFragment"
+        android:label="edit_hero_scrollingfragment"
+        tools:layout="@layout/edit_hero_scrollingfragment" >
+        <action
+            android:id="@+id/action_editHeroScrollingFragment_to_heroFragment"
+            app:destination="@id/heroFragment"
+            app:popUpTo="@id/heroFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+</navigation>
