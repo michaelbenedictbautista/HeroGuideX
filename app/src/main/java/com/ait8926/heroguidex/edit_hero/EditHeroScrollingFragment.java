@@ -72,14 +72,10 @@ public class EditHeroScrollingFragment extends Fragment {
 
             hero = (Hero) bundle.getSerializable("EDIT_HERO");
 
+            resID = binding.getRoot().getResources().getIdentifier(hero.getImage(), "drawable", binding.getRoot().getContext().getPackageName());
+            binding.editImageImageView.setImageResource(resID);
 
-            /*resID = binding.getRoot().getResources().getIdentifier(hero.getImage(), "drawable", binding.getRoot().getContext().getPackageName());
-            binding.editImageImageView.setImageResource(resID);*/
-
-
-
-
-            chosenImage = hero.getImage();
+            //chosenImage = hero.getImage();
             chosenRole = hero.getRole();
             attackDamageValue = hero.getAttackDamage();
             attackSpeedValue = hero.getAttackSpeed();
@@ -107,8 +103,9 @@ public class EditHeroScrollingFragment extends Fragment {
                     int resourceID = binding.getRoot().getResources().getIdentifier(hero.getImage(), "drawable", binding.getRoot().getContext().getPackageName().toString());
                     binding.editImageImageView.setImageResource(resourceID);*/
 
+                    //chosenImage = parent.getItemAtPosition(pos).toString();
+                    //hero.setImage(chosenImage);
                     chosenImage = parent.getItemAtPosition(pos).toString();
-                    hero.setImage(chosenImage);
                     resID = binding.getRoot().getResources().getIdentifier(chosenImage, "drawable", binding.getRoot().getContext().getPackageName().toString());
                     binding.editImageImageView.setImageResource(resID);
 
@@ -227,7 +224,7 @@ public class EditHeroScrollingFragment extends Fragment {
                                         if (hero != null) {
 
                                             navController.navigate(R.id.action_editHeroScrollingFragment_to_heroFragment);
-                                            Snackbar.make(view, "Hero not updated", Snackbar.LENGTH_SHORT).show();
+                                            Snackbar.make(view, "Unsuccessful!", Snackbar.LENGTH_SHORT).show();
                                         }
                                     }
                                 })

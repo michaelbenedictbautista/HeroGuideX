@@ -47,8 +47,8 @@ public class LandingWelcomeFragment extends Fragment {
 
         this.binding.landingWelcomeImageView.setImageResource(R.drawable.ember_landing);
 
-        /*// Sample initialise App username
-        binding.landingNameEditText.setText("John Doe");*/
+        // Sample initialise App username
+        binding.landingNameEditText.setText("John Doe");
 
         // landingLetsStartButton
         binding.landingLetsStartButton.setOnClickListener(new View.OnClickListener() {

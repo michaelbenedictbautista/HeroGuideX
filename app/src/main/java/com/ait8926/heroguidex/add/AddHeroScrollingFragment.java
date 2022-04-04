@@ -223,7 +223,7 @@ public class AddHeroScrollingFragment extends Fragment {
                                     if (hero != null) {
 
                                         navController.navigate(R.id.action_addHeroScrollingFragment_to_heroFragment);
-                                        Snackbar.make(view, "Hero not created", Snackbar.LENGTH_SHORT).show();
+                                        Snackbar.make(view, "Unsuccessful", Snackbar.LENGTH_SHORT).show();
                                     }
                                 }
                             })

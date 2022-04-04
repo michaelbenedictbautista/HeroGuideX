@@ -75,6 +75,7 @@
                 android:id="@+id/heroNameTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="8dp"
                 android:text="Name:"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -88,48 +89,53 @@
                 android:id="@+id/heroHistoryTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="8dp"
                 android:text="History:"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
                 app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
                 app:layout_constraintTop_toBottomOf="@+id/heroNameTextView" />
 
             <CheckBox
                 android:id="@+id/heroAddToFaveCheckBox"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginBottom="4dp"
-                app:layout_constraintBottom_toTopOf="@+id/heroVotesTextView"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineRight" />
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@+id/defenseImageView"
+                app:layout_constraintTop_toBottomOf="@+id/defenseTextView" />
 
             <RatingBar
                 android:id="@+id/heroStarRatingBar"
                 style="@android:style/Widget.Material.RatingBar.Small"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
                 android:background="@color/white"
                 app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineRight" />
 
             <TextView
                 android:id="@+id/heroVotesTextView"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginEnd="4dp"
                 android:text="325 Votes"
                 android:textColor="@color/white"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toTopOf="@+id/heroStarRatingBar"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineRight" />
+                app:layout_constraintBottom_toBottomOf="@+id/heroStarRatingBar"
+                app:layout_constraintEnd_toStartOf="@+id/heroStarRatingBar"
+                app:layout_constraintTop_toTopOf="@+id/heroStarRatingBar" />
 
             <TextView
                 android:id="@+id/heroRoleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
                 android:text="Role:"
                 android:textAlignment="viewStart"
                 android:textColor="@color/white"
@@ -139,8 +145,8 @@
 
             <ImageView
                 android:id="@+id/attackSpeedImageView"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="@+id/attackDamageImageView"
                 app:layout_constraintTop_toBottomOf="@+id/attackDamageImageView"
@@ -148,17 +154,18 @@
 
             <ImageView
                 android:id="@+id/attackDamageImageView"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginEnd="116dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guidelineTop"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="2dp"
+                app:layout_constraintBottom_toBottomOf="@+id/attackDamageTextView"
+                app:layout_constraintEnd_toStartOf="@+id/attackDamageTextView"
+                app:layout_constraintTop_toTopOf="@+id/attackDamageTextView"
                 app:srcCompat="@drawable/attack_damage" />
 
             <ImageView
                 android:id="@+id/defenseImageView"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="@+id/attackSpeedImageView"
                 app:layout_constraintTop_toBottomOf="@+id/attackSpeedImageView"
@@ -166,38 +173,42 @@
 
             <TextView
                 android:id="@+id/attackDamageTextView"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
                 android:clickable="false"
                 android:text="Damage:"
                 android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="@+id/attackDamageImageView"
-                app:layout_constraintStart_toEndOf="@+id/attackDamageImageView"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/attackSpeedTextView"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="2dp"
                 android:clickable="true"
                 android:text="Speed:"
                 android:textColor="@color/white"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/attackSpeedImageView"
-                app:layout_constraintStart_toEndOf="@+id/attackSpeedImageView" />
+                app:layout_constraintStart_toEndOf="@+id/attackSpeedImageView"
+                app:layout_constraintTop_toTopOf="@+id/attackSpeedImageView" />
 
             <TextView
                 android:id="@+id/defenseTextView"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="2dp"
                 android:clickable="true"
                 android:text="Defense:"
                 android:textColor="@color/white"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/defenseImageView"
-                app:layout_constraintStart_toEndOf="@+id/defenseImageView" />
+                app:layout_constraintStart_toEndOf="@+id/defenseImageView"
+                app:layout_constraintTop_toTopOf="@+id/defenseImageView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>

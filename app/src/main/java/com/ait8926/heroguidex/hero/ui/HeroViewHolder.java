@@ -24,9 +24,9 @@ public class HeroViewHolder extends RecyclerView.ViewHolder {
     public void updateHero(Hero hero){
         this.binding.heroNameTextView.setText(hero.getHeroName());
         this.binding.heroHistoryTextView.setText(hero.getHistory());
-        this.binding.heroRoleTextView.setText(hero.getRole());
-        this.binding.attackDamageTextView.setText("A. Damage: " + hero.getAttackDamage());
-        this.binding.attackSpeedTextView.setText("A. Speed: " + hero.getAttackSpeed());
+        this.binding.heroRoleTextView.setText("Role: " + hero.getRole());
+        this.binding.attackDamageTextView.setText("Damage: " + hero.getAttackDamage());
+        this.binding.attackSpeedTextView.setText("Speed: " + hero.getAttackSpeed());
         this.binding.defenseTextView.setText("Defense: " + hero.getDefense());
         this.binding.heroVotesTextView.setText("Votes: " + hero.getVotes());
         this.binding.heroStarRatingBar.setRating(hero.getRating());
@@ -50,4 +50,4 @@ public class HeroViewHolder extends RecyclerView.ViewHolder {
         });
     }
 }
-//.getVotes() + " Votes");
+
