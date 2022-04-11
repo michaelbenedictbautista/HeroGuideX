@@ -1,22 +1,27 @@
 package com.ait8926.heroguidex.edit_hero;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
+
 import android.view.LayoutInflater;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.RatingBar;
+
 import android.widget.SeekBar;
 import android.widget.Spinner;
+
 
 import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.lifecycle.ViewModelProvider;
+
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -24,7 +29,7 @@ import com.ait8926.heroguidex.R;
 
 import com.ait8926.heroguidex.databinding.EditHeroScrollingfragmentBinding;
 import com.ait8926.heroguidex.hero.Hero;
-import com.ait8926.heroguidex.hero.ui.HeroViewModel;
+
 import com.google.android.material.snackbar.Snackbar;
 
 public class EditHeroScrollingFragment extends Fragment {
@@ -42,9 +47,6 @@ public class EditHeroScrollingFragment extends Fragment {
     int defenseValue;
     int resID;
 
-
-
-
     /*public static EditHeroScrollingFragment newInstance() {
         return new EditHeroScrollingFragment();
     }*/
@@ -58,35 +60,37 @@ public class EditHeroScrollingFragment extends Fragment {
         return binding.getRoot();
     }
 
+    @SuppressLint("ResourceType")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         // Check for incoming bundle of data from Edit hero class named "EDIT_HERO"
-
         Context context = this.getContext();
         NavController navController = Navigation.findNavController(view);
 
         Bundle bundle = getArguments();
         if (bundle != null && bundle.containsKey("EDIT_HERO")) {
 
-            hero = (Hero) bundle.getSerializable("EDIT_HERO");
+            hero = (Hero) getArguments().getSerializable("EDIT_HERO");
 
-            resID = binding.getRoot().getResources().getIdentifier(hero.getImage(), "drawable", binding.getRoot().getContext().getPackageName());
-            binding.editImageImageView.setImageResource(resID);
-
-            //chosenImage = hero.getImage();
+            // Assign variable
+            chosenImage = hero.getImage();
             chosenRole = hero.getRole();
             attackDamageValue = hero.getAttackDamage();
             attackSpeedValue = hero.getAttackSpeed();
             defenseValue = hero.getDefense();
             chosenHistory = hero.getHistory();
 
-           /* int resID = binding.getRoot().getResources().getIdentifier(hero.getImage(), "drawable", binding.getRoot().getContext().getPackageName());
-            this.binding.editImageImageView.setImageResource(resID);*/
 
+//            resID = binding.getRoot().getResources().getIdentifier(chosenImage, "drawable", binding.getRoot().getContext().getPackageName());
+//            binding.editImageImageView.setImageResource(resID);
 
+            // Spinner Class
             Spinner spinnerImage = binding.editImageSpinner;
+            resID = binding.getRoot().getResources().getIdentifier(chosenImage, "drawable", binding.getRoot().getContext().getPackageName());
+            binding.editImageImageView.setImageResource(resID);
+
 
             ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(context, R.array.image, android.R.layout.simple_spinner_item);
 
@@ -94,33 +98,22 @@ public class EditHeroScrollingFragment extends Fragment {
 
             spinnerImage.setAdapter(adapter);
 
+
             spinnerImage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-                    //Object item = parent.getItemAtPosition(pos);
 
-                   /*chosenImage = parent.getItemAtPosition(pos).toString();
-                    hero.setImage(chosenImage);
-                    int resourceID = binding.getRoot().getResources().getIdentifier(hero.getImage(), "drawable", binding.getRoot().getContext().getPackageName().toString());
-                    binding.editImageImageView.setImageResource(resourceID);*/
-
-                    //chosenImage = parent.getItemAtPosition(pos).toString();
-                    //hero.setImage(chosenImage);
-                    chosenImage = parent.getItemAtPosition(pos).toString();
-                    resID = binding.getRoot().getResources().getIdentifier(chosenImage, "drawable", binding.getRoot().getContext().getPackageName().toString());
-                    binding.editImageImageView.setImageResource(resID);
-
-
-
+                    int resID2 = binding.getRoot().getResources().getIdentifier(chosenImage, "drawable", binding.getRoot().getContext().getPackageName().toString());
+                    binding.editImageImageView.setImageResource(resID2);
                 }
 
                 public void onNothingSelected(AdapterView<?> parent) {
+                    Log.i("sample", "asasa");
                 }
             });
 
             // Set hero name to editNameEditText
             chosenName = hero.getHeroName();
             binding.editNameEditText.setText(chosenName);
-
 
             ////////////////addRoleSpinner/////////////
             Spinner spinnerRole = binding.editRoleSpinner;
@@ -247,9 +240,8 @@ public class EditHeroScrollingFragment extends Fragment {
                         } else if (chosenHistory.trim().isEmpty()) {
                             binding.editHistoryEditText.setText("Defense of the Ancient hero " + chosenName + " will play as " + chosenRole +
                                     "role to fight against radiant team.");
+
                         } else {
-
-
                             // Set all the values getting from the add/create hero page
                             hero.setImage(chosenImage);
                             hero.setHeroName(chosenName);
