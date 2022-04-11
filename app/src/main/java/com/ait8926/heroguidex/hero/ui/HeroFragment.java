@@ -108,8 +108,6 @@ public class HeroFragment extends Fragment implements OnItemClickListener {
     @Override
     public void Onclick(Hero hero, View view) {
         // This will be implemented once image hero image being clicked
-
-        Log.i("XYZ", hero.toString());
         Bundle bundle = new Bundle();
         bundle.putSerializable("EDIT_HERO", hero);
 

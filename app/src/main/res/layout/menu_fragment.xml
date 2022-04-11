@@ -102,7 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:backgroundTint="#00BCD4"
-            android:text="View alll heroes"
+            android:text="View all heroes"
             android:textColor="@color/black"
             app:layout_constraintEnd_toStartOf="@+id/guideline13"
             app:layout_constraintHorizontal_bias="0.0"

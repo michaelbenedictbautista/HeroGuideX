@@ -91,7 +91,7 @@
             android:id="@+id/action_editHeroScrollingFragment_to_heroFragment"
             app:destination="@id/heroFragment"
             app:popUpTo="@id/heroFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="true" />
     </fragment>
 
 </navigation>
