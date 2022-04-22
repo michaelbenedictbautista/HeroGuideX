@@ -87,17 +87,17 @@ public class HeroRepository {
         return hero;
     }
 
-   /* // Find hero by hero name
+    // Find hero by hero name
     public Hero findByName(String heroName){
 
-        Callable c = () -> {   // Lambda Expression
+        Callable callable = () -> {   // Lambda Expression
             Hero hero = heroDao.findByName(heroName);
             return hero;
         };
 
         // Execute the thread but the future.get() method will wait for the result before proceeding.
         // this method of will be use mostly if we need to get particular result.
-        Future<Hero> future = HeroRoomDatabase.databaseWriteExecutor.submit(c);
+        Future<Hero> future = HeroRoomDatabase.databaseWriteExecutor.submit(callable);
         try {
             hero = future.get();
         } catch (ExecutionException e) {
@@ -106,5 +106,5 @@ public class HeroRepository {
             e.getMessage();;
         }
         return hero;
-    }*/
+    }
 }

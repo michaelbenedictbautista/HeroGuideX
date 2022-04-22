@@ -25,7 +25,7 @@ public interface HeroDao {
     @Query("SELECT * FROM HERO WHERE ID = :id")
     Hero findById(int id);
 
-    @Query ("SELECT * FROM HERO WHERE HERO_NAME = :heroName")
+    @Query ("SELECT * FROM HERO WHERE HERO_NAME LIKE :heroName")
     Hero findByName(String heroName);
 
     @Query("SELECT * FROM HERO")
