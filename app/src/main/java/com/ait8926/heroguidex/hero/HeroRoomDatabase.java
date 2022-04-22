@@ -66,17 +66,17 @@ public abstract class HeroRoomDatabase  extends RoomDatabase {
             HeroDao heroDao = INSTANCE.heroDao();
 
             heroDao.insert(new Hero(75, 80, 65, 5, 1, "Alchemist", "Razzil Darkbrew, the Alchemist," +
-                    " is a melee strength hero whose alchemical prowess makes him a strange but versatile fighter.", "Carry","hero_1"));
+                    " is a melee strength hero whose alchemical prowess makes him a strange but versatile fighter.", "Carry","hero_1","hero1_audio"));
             heroDao.insert(new Hero(67,55,89,7,4,"Bristleback", "Rigwarl, the Bristleback, is a melee strength hero famous for" +
                     " his array of synergistic, simplistic, and yet effective spells with low mana costs and cooldowns.",
-                    "Carry", "hero_2"));
+                    "Carry", "hero_2", "hero2_audio"));
             heroDao.insert(new Hero(98, 85, 47, 8, 5, "Chaos knight", "Chaos Knight is a melee strength hero with " +
-                    "one of the highest physical damage output ceilings of all heroes.", "Carry", "hero_3"));
+                    "one of the highest physical damage output ceilings of all heroes.", "Carry", "hero_3", "hero3_audio"));
             heroDao.insert(new Hero(55, 88, 72, 3, 3, "GrimStroke", "Grimstroke is a ranged intelligence hero " +
-                    "specializing as a nuker and offensive support.", "Support", "hero_4"));
+                    "specializing as a nuker and offensive support.", "Support", "hero_4", "hero4_audio"));
             heroDao.insert(new Hero(80, 99,60,5,2,"Juggernaut","Yurnero, the Juggernaut, is a melee agility hero whose abilities " +
                     "allow him to sprint into battle and recklessly devastate enemies " +
-                    "in an impenetrable flurry of blades.", "Carry", "hero_5"));
+                    "in an impenetrable flurry of blades.", "Carry", "hero_5", "hero5_audio"));
         });
 
     }
