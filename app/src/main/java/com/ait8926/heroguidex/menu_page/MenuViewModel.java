@@ -48,11 +48,9 @@ public class MenuViewModel extends AndroidViewModel {
 
     public Hero findById(int id) { return heroRepository.findById(id); }
 
-
-
-/*    public Hero findByName(String heroName){
+    public Hero findByName(String heroName){
         return heroRepository.findByName(heroName);
-    }*/
+    }
 
 
 }

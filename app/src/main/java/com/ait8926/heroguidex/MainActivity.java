@@ -2,8 +2,7 @@ package com.ait8926.heroguidex;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.app.ActionBar;
+
 import android.os.Bundle;
 
 import com.ait8926.heroguidex.landing_page.ui.LandingWelcomeFragment;
@@ -24,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         // For my later implementation
         /*getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeActionContentDescription(R.drawable.ic_back);*/
+
+
     }
 
 }

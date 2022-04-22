@@ -37,23 +37,14 @@ public class HeroViewModel extends AndroidViewModel {
 
     public void  update(Hero hero) { heroRepository.update(hero); }
 
-
     public LiveData<List<Hero>> getAllHeroes(){
         return heroRepository.getAllHeroes();
     }
-
 
     public Hero findById(int id) {
         return heroRepository.findById(id);
     }
 
-
-
-/*
-//////////////////////////////////////////
-    public Hero findByName(String heroName) {
-        return heroRepository.findByName(heroName);
-    }
-*/
+    public Hero findByName(String heroName) { return heroRepository.findByName(heroName); }
 
 }

@@ -86,21 +86,15 @@ public class LandingWelcomeFragment extends Fragment {
                 // Create object for the Navigation host
                 NavController navController = Navigation.findNavController(view);
 
-
                 //////////////////////////////Main code//////////////////
                 User user = new User();
                 user.setUserName(binding.landingNameEditText.getText().toString());
-
-
-
-
 
                 // Pass the data the next destination
                 Bundle bundle = new Bundle();
 
                 // Wrap the whole object as one
                 bundle.putSerializable("UserName", user);
-
 
                 /*Individual bundle passing of attributes example
                 bundle.putString("LoggedInUsername", user.getUsername());
