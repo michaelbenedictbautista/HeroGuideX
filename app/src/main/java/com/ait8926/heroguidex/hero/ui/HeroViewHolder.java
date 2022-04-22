@@ -1,7 +1,10 @@
 package com.ait8926.heroguidex.hero.ui;
 
+import android.content.Context;
+import android.media.MediaPlayer;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,6 +42,42 @@ public class HeroViewHolder extends RecyclerView.ViewHolder {
             int resourceID = binding.getRoot().getResources().getIdentifier(hero.getImage(), "drawable", binding.getRoot().getContext().getPackageName());
             this.binding.heroImageView.setImageResource(resourceID);
         }
+
+//        int resourceID = binding.getRoot().getResources().getIdentifier(hero.getAudio(), "raw", binding.getRoot().getContext().getPackageName());
+//        MediaPlayer mediaPlayer =  MediaPlayer.create(binding.getRoot().getContext(), resourceID);
+//        this.binding.playAudioImageButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                mediaPlayer.start();
+//
+//                //Navigate through resource Id and pass the bundle to the parameter of navController
+//                //navController.navigate(R.id.action_heroFragment_to_addHeroScrollingFragment, bundle);
+//            }
+//        });
+
+        if(hero.getAudio().isEmpty()) {
+
+            this.binding.playAudioImageButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    MediaPlayer mediaPlayer = MediaPlayer.create(binding.getRoot().getContext(), R.raw.hero5_audio);
+                    mediaPlayer.start();
+                }
+            });
+        } else {
+            int resourceID = binding.getRoot().getResources().getIdentifier(hero.getAudio(), "raw", binding.getRoot().getContext().getPackageName());
+
+            this.binding.playAudioImageButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    MediaPlayer mediaPlayer =  MediaPlayer.create(binding.getRoot().getContext(), resourceID);
+                    mediaPlayer.start();
+
+                    //Navigate through resource Id and pass the bundle to the parameter of navController
+                    //navController.navigate(R.id.action_heroFragment_to_addHeroScrollingFragment, bundle);
+                }
+            });
+        }
     }
 
     public void bind(Hero hero, OnItemClickListener onItemClickListener) {
@@ -50,4 +89,3 @@ public class HeroViewHolder extends RecyclerView.ViewHolder {
         });
     }
 }
-
