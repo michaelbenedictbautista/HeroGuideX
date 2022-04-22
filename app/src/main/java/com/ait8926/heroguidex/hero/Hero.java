@@ -25,6 +25,8 @@ public class Hero implements Serializable {
     private String history;
     private String role;
     private String image;
+    private String audio;
+
 
     private int attackDamage;
     private int attackSpeed;
@@ -40,7 +42,7 @@ public class Hero implements Serializable {
 
     // Constructor with parameters
     public Hero(int attackDamage, int attackSpeed, int defense, int votes, int rating,
-                String heroName, String history, String role, String image) {
+                String heroName, String history, String role, String image, String audio) {
         this.attackDamage = attackDamage;
         this.attackSpeed = attackSpeed;
         this.defense = defense;
@@ -50,6 +52,7 @@ public class Hero implements Serializable {
         this.history = history;
         this.role = role;
         this.image = image;
+        this.audio = audio;
     }
 
     // Getters and setters
@@ -133,6 +136,15 @@ public class Hero implements Serializable {
         this.rating = rating;
     }
 
+    public String getAudio() {
+        return audio;
+    }
+
+    public void setAudio(String audio) {
+        this.audio = audio;
+    }
+
+
     @NonNull
     @Override
     public String toString() {
@@ -142,6 +154,7 @@ public class Hero implements Serializable {
                 ", history='" + history + '\'' +
                 ", attack role='" + role + '\'' +
                 ", image=" + image +
+                ", audio=" + audio +
                 ", attackDamage=" + attackDamage +
                 ", attack attackSpeed=" + attackSpeed +
                 ", attack defense=" + defense +
