@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HeroGuideX</string>
+    <string name="app_name">Hero Guide X</string>
     <string name="landingWelcomeTextView">Welcome to Hero Guide X</string>
     <string name="landingLetsStartButton">Let\'s get started</string>
 
@@ -30,4 +30,24 @@
         <item>hero_15</item>
         <item>hero_16</item>
     </string-array>
+
+    <string-array name="audio">
+        <item>hero1_audio</item>
+        <item>hero2_audio</item>
+        <item>hero3_audio</item>
+        <item>hero4_audio</item>
+        <item>hero5_audio</item>
+        <item>hero6_audio</item>
+        <item>hero7_audio</item>
+        <item>hero8_audio</item>
+        <item>hero9_audio</item>
+        <item>hero10_audio</item>
+        <item>hero11_audio</item>
+        <item>hero12_audio</item>
+        <item>hero13_audio</item>
+        <item>hero14_audio</item>
+        <item>hero15_audio</item>
+        <item>hero16_audio</item>
+    </string-array>
+
 </resources>

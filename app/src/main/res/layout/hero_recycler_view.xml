@@ -98,15 +98,6 @@
                 app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
                 app:layout_constraintTop_toBottomOf="@+id/heroNameTextView" />
 
-            <CheckBox
-                android:id="@+id/heroAddToFaveCheckBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:visibility="invisible"
-                app:layout_constraintStart_toStartOf="@+id/defenseImageView"
-                app:layout_constraintTop_toBottomOf="@+id/defenseTextView" />
-
             <RatingBar
                 android:id="@+id/heroStarRatingBar"
                 style="@android:style/Widget.Material.RatingBar.Small"
@@ -210,6 +201,17 @@
                 app:layout_constraintBottom_toBottomOf="@+id/defenseImageView"
                 app:layout_constraintStart_toEndOf="@+id/defenseImageView"
                 app:layout_constraintTop_toTopOf="@+id/defenseImageView" />
+
+            <ImageButton
+                android:id="@+id/playAudioImageButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:backgroundTint="@color/BlueGreen"
+                android:soundEffectsEnabled="true"
+                app:layout_constraintStart_toStartOf="@+id/defenseImageView"
+                app:layout_constraintTop_toBottomOf="@+id/defenseTextView"
+                app:srcCompat="@android:drawable/ic_media_play" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>

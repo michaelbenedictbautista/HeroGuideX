@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_tutorialFragment_to_collectionFragment"
             app:destination="@id/collectionFragment" />
+        <action
+            android:id="@+id/action_tutorialFragment_to_landingFragment2"
+            app:destination="@id/landingFragment" />
     </fragment>
 
     <fragment
@@ -42,6 +45,9 @@
         <action
             android:id="@+id/action_collectionFragment_to_tutorialFragment"
             app:destination="@id/tutorialFragment" />
+        <action
+            android:id="@+id/action_collectionFragment_to_landingFragment"
+            app:destination="@id/landingFragment" />
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
@@ -79,8 +85,8 @@
         <action
             android:id="@+id/action_addHeroScrollingFragment_to_heroFragment"
             app:destination="@id/heroFragment"
-            app:popUpTo="@id/heroFragment"
-            app:popUpToInclusive="true" />
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/editHeroScrollingFragment"
@@ -90,8 +96,8 @@
         <action
             android:id="@+id/action_editHeroScrollingFragment_to_heroFragment"
             app:destination="@id/heroFragment"
-            app:popUpTo="@id/heroFragment"
-            app:popUpToInclusive="true" />
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="false" />
     </fragment>
 
 </navigation>
