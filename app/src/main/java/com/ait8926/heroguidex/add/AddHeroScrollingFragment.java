@@ -40,11 +40,11 @@ public class AddHeroScrollingFragment extends Fragment {
     String chosenRole;
     String chosenName;
     String chosenHistory;
+    String chosenAudio;
     int attackDamageValue;
     int attackSpeedValue;
     int defenseValue;
     int resID;
-
 
     public static AddHeroScrollingFragment newInstance() {
         return new AddHeroScrollingFragment();
@@ -75,11 +75,8 @@ public class AddHeroScrollingFragment extends Fragment {
 
         ////////////////addImageSpinner//////////////
         Spinner spinnerImage = binding.addImageSpinner;
-
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(context, R.array.image, android.R.layout.simple_spinner_item);
-
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-
         spinnerImage.setAdapter(adapter);
 
         spinnerImage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -97,14 +94,10 @@ public class AddHeroScrollingFragment extends Fragment {
             }
         });
 
-
         ////////////////addRoleSpinner/////////////
         Spinner spinnerRole = binding.addRoleSpinner;
-
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(context, R.array.role, android.R.layout.simple_spinner_item);
-
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_item);
-
         spinnerRole.setAdapter(adapter2);
 
         spinnerRole.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -114,6 +107,26 @@ public class AddHeroScrollingFragment extends Fragment {
             }
 
             public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+        ////////////addDamageSeekBar//////////
+        binding.addDamageSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                attackDamageValue = i;
+                binding.addDmgProgTextView.setVisibility(view.VISIBLE);
+                binding.addDmgProgTextView.setText(attackDamageValue + "/100");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
             }
         });
 
@@ -177,7 +190,23 @@ public class AddHeroScrollingFragment extends Fragment {
             }
         });
 
-        // addHeroAddButton method declaration and definition
+        ////////////////addAudioSpinner/////////////
+        Spinner spinnerAudio = binding.addAudioSpinner;
+        ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(context, R.array.audio, android.R.layout.simple_spinner_item);
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinnerAudio.setAdapter(adapter3);
+
+        spinnerAudio.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                chosenAudio = parent.getItemAtPosition(pos).toString();
+                //binding.addRoleTextView.setText(chosenRole);
+            }
+
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+        ////////////// addHeroAddButton method declaration and definition/////////////
         binding.addHeroAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -202,6 +231,7 @@ public class AddHeroScrollingFragment extends Fragment {
                     hero.setAttackSpeed(attackSpeedValue);
                     hero.setDefense(defenseValue);
                     hero.setHistory(chosenHistory);
+                    hero.setAudio(chosenAudio);
 
                     bundle.putSerializable("ADD_HERO", hero);
                     navController.navigate(R.id.action_addHeroScrollingFragment_to_heroFragment, bundle);
@@ -209,7 +239,7 @@ public class AddHeroScrollingFragment extends Fragment {
             }
         });
 
-        // addHeroCancelButton method declaration and definition
+        ///////////////addHeroCancelButton method declaration and definition////////////
         binding.addHeroCancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
