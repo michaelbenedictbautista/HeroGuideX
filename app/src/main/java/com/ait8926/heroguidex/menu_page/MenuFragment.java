@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.text.Editable;
 import android.text.TextUtils;
 
 
@@ -29,6 +30,7 @@ import com.ait8926.heroguidex.landing_page.User;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
+import java.util.Locale;
 
 
 public class MenuFragment extends Fragment {
@@ -37,6 +39,7 @@ public class MenuFragment extends Fragment {
     private MenuViewModel mViewModel;
     // Create instance of MenuFragmentBinding class
     private MenuFragmentBinding binding;
+
 
     public static MenuFragment newInstance() {
         return new MenuFragment();
@@ -83,7 +86,7 @@ public class MenuFragment extends Fragment {
         } else binding.menuUserNameTextView.setText("Hello");
 
         // Set image to ImageView. tinker hero//
-        this.binding.menuHeroImageView.setImageResource(R.drawable.hero_14);
+        //this.binding.menuHeroImageView.setImageResource(R.drawable.hero_14);
 
         // menuViewAllHeroButton method declaration and definition
         binding.menuViewAllHeroButton.setOnClickListener(new View.OnClickListener() {
@@ -94,27 +97,70 @@ public class MenuFragment extends Fragment {
 
                 // Navigate through resource Id and pass the bundle to the parameter of navController
                 navController.navigate(R.id.action_menuFragment_to_heroFragment, bundle);
-
             }
         });
 
+        ////////////////////////////findHeroByName//////////////////////////
+        // method declaration and definition
+        binding.menuFindHeroByNameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (TextUtils.isEmpty(binding.menuFindIdEditText.getText())) {
+                    Toast.makeText(getContext(), "Please input an Hero name", Toast.LENGTH_SHORT).show();
+                    binding.menuResultTextView.requestFocus();
+
+                } else {
+                    String name = "%" + binding.menuFindIdEditText.getText().toString().toLowerCase() + "%";
+                    Hero hero = mViewModel.findByName(name);
+
+                    if (hero != null) {
+                        // Set hero name and role to menuResultTextView
+                        binding.menuResultTextView.setText("Hero name: " + hero.getHeroName() +
+                                '\n' + "Hero Role: " + hero.getRole());
+
+                        binding.menuHeroIdTextView.setVisibility(view.VISIBLE);
+                        binding.menuHeroIdTextView.setText(String.valueOf(hero.getId()));
+
+                        // Display image as well in menuHeroImageView
+                        int resourceID = binding.getRoot().getResources().getIdentifier(hero.getImage(), "drawable", binding.getRoot().getContext().getPackageName());
+                        binding.menuHeroImageView.setImageResource(resourceID);
+
+                        ////////////////////////// Toast///////////////////////
+                    } else {
+                        Toast.makeText(getContext(), "Hero name not registered. Try again.", Toast.LENGTH_LONG).show();
+                        binding.menuFindIdEditText.getText().clear();
+                        binding.menuFindIdEditText.requestFocus();
+                    }
+                }
+            }
+        });
+
+        ////////////////////////////findHeroById//////////////////////////
         // method declaration and definition
         binding.menuFindHeroByIdButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (TextUtils.isEmpty(binding.menuFindIdEditText.getText())) {
-                    Toast.makeText(getContext(), "Please input an Hero ID", Toast.LENGTH_SHORT).show();
+                Editable searchId = binding.menuFindIdEditText.getText();
+
+                if (TextUtils.isEmpty(searchId)) {
+                    Toast.makeText(getContext(), "Please input a Hero ID", Toast.LENGTH_SHORT).show();
+                    binding.menuResultTextView.requestFocus();
+
+                }else if (!TextUtils.isDigitsOnly(searchId)) {
+                    Toast.makeText(getContext(), "Please input a Hero ID", Toast.LENGTH_SHORT).show();
                     binding.menuResultTextView.requestFocus();
 
                 } else {
-                    String id = binding.menuFindIdEditText.getText().toString();
+                    String id = binding.menuFindIdEditText.getText().toString().trim();
                     Hero hero = mViewModel.findById(Integer.parseInt(id));
-
 
                     if (hero != null) {
                         // Set hero name and role to menuResultTextView
-                        binding.menuResultTextView.setText("Hero name " + hero.getHeroName() +
-                                                            " will play as a role of " + hero.getRole());
+                        binding.menuResultTextView.setText("Hero name: " + hero.getHeroName() +
+                                '\n' + "Hero Role: " + hero.getRole());
+
+                        binding.menuHeroIdTextView.setVisibility(view.VISIBLE);
+                        binding.menuHeroIdTextView.setText(String.valueOf(hero.getId()));
 
                         // Display image as well in menuHeroImageView
                         int resourceID = binding.getRoot().getResources().getIdentifier(hero.getImage(), "drawable", binding.getRoot().getContext().getPackageName());
@@ -131,6 +177,7 @@ public class MenuFragment extends Fragment {
             }
         });
 
+
         // Delete hero by ID method declaration and definition
         binding.menuDeleteHeroByIdButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,8 +185,18 @@ public class MenuFragment extends Fragment {
                 if (TextUtils.isEmpty(binding.menuFindIdEditText.getText())) {
                     Toast.makeText(getContext(), "Please input a Hero ID", Toast.LENGTH_SHORT).show();
                 } else {
-                    String id = binding.menuFindIdEditText.getText().toString();
+                    String id = binding.menuHeroIdTextView.getText().toString();
                     Hero hero = mViewModel.findById(Integer.parseInt(id));
+
+                    binding.menuResultTextView.setText("Hero name " + hero.getHeroName() +
+                            " will play as a role of " + hero.getRole());
+
+                    binding.menuHeroIdTextView.setVisibility(view.VISIBLE);
+                    binding.menuHeroIdTextView.setText(String.valueOf(hero.getId()));
+
+                    // Display image as well in menuHeroImageView
+                    int resourceID = binding.getRoot().getResources().getIdentifier(hero.getImage(), "drawable", binding.getRoot().getContext().getPackageName());
+                    binding.menuHeroImageView.setImageResource(resourceID);
 
                     new AlertDialog.Builder(context)
                             .setTitle("Delete hero?")
@@ -164,5 +221,3 @@ public class MenuFragment extends Fragment {
         });
     }
 }
-
-
