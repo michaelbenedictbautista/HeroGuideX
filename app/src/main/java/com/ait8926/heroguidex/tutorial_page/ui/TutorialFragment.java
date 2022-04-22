@@ -83,5 +83,18 @@ public class TutorialFragment extends Fragment {
             }
         });
 
+        // landingForwardImageButton
+        binding.tutorialSkipButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // Create object for the Navigation host
+                NavController navController = Navigation.findNavController(view);
+
+                //navigate through resource Id and pass the bundle to the parameter of navController
+                navController.navigate(R.id.action_tutorialFragment_to_landingFragment2);
+
+            }
+        });
     }
 }
