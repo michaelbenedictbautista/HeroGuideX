@@ -1,9 +1,34 @@
 <resources>
     <string name="app_name">Hero Guide X</string>
+
     <string name="landingWelcomeTextView">Welcome to Hero Guide X</string>
+    <string name="landingIntroTextView">Defense Of The Ancients also known as Dota 2 is
+        an Action RTS game and modern multiplayer masterpiece which was
+        based on the Aeon of Strife map for StarCraft.</string>
     <string name="landingLetsStartButton">Let\'s get started</string>
+    <string name="landingNameHintEditText">Enter name here...</string>
+    <string name="landingNameTextView">* Name:</string>
+
 
     <string name="tutorialCreateHeroTextView">Create your own hero</string>
+    <string name="tutorialDescriptionTextView">Heroes are the most essential element in the
+        course of playing Dota 2. During a match, two opposing teams select five out of 123 heroes
+        that accumulate experience and gold to grow stronger and gain new abilities in
+        order to destroy the opponent\'s Ancient.</string>
+    <string name="tutorial_imageContentDescription">Tutorial image</string>
+    <string name="tutorialSkipLabelButton">SKIP</string>
+
+    <string name="collectionDescriptionTextView">From magical tacticians to fierce brutes
+        and cunning rogues, Dota 2\'s hero pool is massive and limitlessly diverse.
+        Unleash incredible abilities and devastating ultimates on your way to victory.
+        It\'s completely free to play.</string>
+    <string name="collectionSkipLabelButton">SKIP</string>
+    <string name="collection_imageContentDescription">Collection image</string>
+    <string name="collectionTitleTextView">Who will you choose?</string>
+
+
+
+
     <string name="stormpicture">StormPicture</string>
 
     <string-array name="role">
@@ -29,6 +54,15 @@
         <item>hero_14</item>
         <item>hero_15</item>
         <item>hero_16</item>
+        <item>hero_17</item>
+        <item>hero_18</item>
+        <item>hero_19</item>
+        <item>hero_20</item>
+        <item>hero_21</item>
+        <item>hero_22</item>
+        <item>hero_23</item>
+        <item>hero_24</item>
+        <item>hero_25</item>
     </string-array>
 
     <string-array name="audio">
@@ -48,6 +82,59 @@
         <item>hero14_audio</item>
         <item>hero15_audio</item>
         <item>hero16_audio</item>
+        <item>hero17_audio</item>
+        <item>hero18_audio</item>
+        <item>hero19_audio</item>
+        <item>hero20_audio</item>
+        <item>hero21_audio</item>
+        <item>hero22_audio</item>
+        <item>hero23_audio</item>
+        <item>hero24_audio</item>
+        <item>hero25_audio</item>
     </string-array>
+
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="splashLogoImageView">logo</string>
+    <string name="menuNoHeroTextView">No hero selected</string>
+    <string name="menuHintEditText">Type hero ID or Name here...</string>
+    <string name="menuFindHeroByNameLabelButton">Find hero by name</string>
+    <string name="menuFindHeroByIDLabelButton">Find hero by ID</string>
+    <string name="menuViewAllHeroesLabelButton">View all heroes</string>
+    <string name="menuDeleteHeroLabelButton">Delete hero</string>
+    <string name="menuTitleTextView">Hello</string>
+    <string name="menuHeroRegisteredTextTextView">Total hero registered:</string>
+    <string name="menuHeroIdDefaultTextEditText">0</string>
+    <string name="menuHeroIdLabelTextView">Hero ID:</string>
+    <string name="heroNameLabelTextView">Name:</string>
+    <string name="addTitleLabelTextView">Create your own hero</string>
+    <string name="addNameLabelTextView">Hero name</string>
+    <string name="addRoleLabelTextView">Role</string>
+    <string name="addAudioLabelTextView">Audio</string>
+    <string name="addHistoryLabelTextView">History</string>
+    <string name="addDamageLabelTextView">Attack Damage</string>
+    <string name="editSpeedLabelTextView">Attack Speed</string>
+    <string name="addDefenseLabelTextView">Defense</string>
+    <string name="addSelectImageLabelTextView">Select image</string>
+    <string name="addHeroLabelAddButton">ADD</string>
+    <string name="editCurrentImageLabelTextView">Current image</string>
+    <string name="editHeroLabelCancelButton">Cancel</string>
+    <string name="editHeroLabelSaveButton">Save</string>
+    <string name="editSelectNewImageLabelTextView">Select new image?</string>
+    <string name="editDefenseLabelTextView">Current defense:</string>
+    <string name="editCurrentSpeedLabelTextView">Current speed:</string>
+    <string name="editDamageLabelTextView">Current damage</string>
+    <string name="editHistoryLabelTextView">Current history:</string>
+    <string name="editRoleLabelTextView">Current role:</string>
+    <string name="editNameLabelTextView">Current name:</string>
+    <string name="editTitleLabelTextView">Edit hero</string>
+    <string name="editAudioLabelTextView">Current audio:</string>
+    <!-- Strings used for fragments for navigation -->
+<!--    <string name="first_fragment_label">First Fragment</string>-->
+<!--    <string name="second_fragment_label">Second Fragment</string>-->
+<!--    <string name="next">Next</string>-->
+<!--    <string name="previous">Previous</string>-->
+<!--    <string name="hello_first_fragment">Hello first fragment</string>-->
+<!--    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>-->
+
 
 </resources>
