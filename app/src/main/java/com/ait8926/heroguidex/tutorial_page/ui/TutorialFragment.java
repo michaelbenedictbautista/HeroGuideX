@@ -13,11 +13,10 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.ait8926.heroguidex.R;
 import com.ait8926.heroguidex.databinding.TutorialFragmentBinding;
-import com.ait8926.heroguidex.landing_page.User;
-
 
 public class TutorialFragment extends Fragment {
 
@@ -41,60 +40,51 @@ public class TutorialFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(TutorialViewModel.class);
 
-        // Set image to ImageView
-        this.binding.tutorialImageView.setImageResource(R.drawable.clock_tutorial);
+        try {
+            // Set image to ImageView
+            this.binding.tutorialImageView.setImageResource(R.drawable.clock_tutorial);
 
-        // Create instance of Bundle
-        Bundle bundle = getArguments();
+            // tutorialForwardImageButton
+            binding.tutorialForwardImageButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-        if(bundle !=  null && bundle.containsKey("UserName")) {
-            User user = (User) bundle.getSerializable("UserName"); // cast it as User object
+                    // Create object for the Navigation host
+                    NavController navController = Navigation.findNavController(view);
 
-            // Get username from my previous destination and set it to my CreateHeroTextView
-            binding.tutorialCreateHeroTextView.setText
-                    (binding.tutorialCreateHeroTextView.getText() + " " + user.getUserName().toString());
+                    // Navigate through resource Id and pass the bundle to the parameter of navController
+                    navController.navigate(R.id.action_tutorialFragment_to_collectionFragment);
+                }
+            });
+
+            // tutorialBackwardImageButton
+            binding.tutorialBackwardImageButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    // Create object for the Navigation host
+                    NavController navController = Navigation.findNavController(view);
+
+                    // Navigate through resource Id and pass the bundle to the parameter of navController
+                    navController.navigate(R.id.action_tutorialFragment_to_landingFragment);
+                }
+            });
+
+            // landingForwardImageButton
+            binding.tutorialSkipButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    // Create object for the Navigation host
+                    NavController navController = Navigation.findNavController(view);
+
+                    //navigate through resource Id and pass the bundle to the parameter of navController
+                    navController.navigate(R.id.action_tutorialFragment_to_landingFragment2);
+                }
+            });
+        } catch (Exception exception) {
+            Toast.makeText(getContext(), "System application error occurred. Try again.", Toast.LENGTH_SHORT).show();
+            exception.printStackTrace();
         }
-        else  binding.tutorialCreateHeroTextView.setText(binding.tutorialCreateHeroTextView.getText());
-
-        // tutorialForwardImageButton
-        binding.tutorialForwardImageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                // Create object for the Navigation host
-                NavController navController = Navigation.findNavController(view);
-
-                // Navigate through resource Id and pass the bundle to the parameter of navController
-               navController.navigate(R.id.action_tutorialFragment_to_collectionFragment, bundle);
-            }
-        });
-
-        // tutorialBackwardImageButton
-        binding.tutorialBackwardImageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                // Create object for the Navigation host
-                NavController navController = Navigation.findNavController(view);
-
-
-                // Navigate through resource Id and pass the bundle to the parameter of navController
-                navController.navigate(R.id.action_tutorialFragment_to_landingFragment, bundle);
-            }
-        });
-
-        // landingForwardImageButton
-        binding.tutorialSkipButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                // Create object for the Navigation host
-                NavController navController = Navigation.findNavController(view);
-
-                //navigate through resource Id and pass the bundle to the parameter of navController
-                navController.navigate(R.id.action_tutorialFragment_to_landingFragment2);
-
-            }
-        });
     }
 }
