@@ -11,6 +11,14 @@
     <color name="Yellow">#feed00</color>
     <color name="BlueGreen">#00C6CF</color>
 
+    <!-- Customise Theme-->
+    <color name="primaryColor">#263238</color>
+    <color name="primaryLightColor">#4f5b62</color>
+    <color name="primaryDarkColor">#000a12</color>
+    <color name="primaryTextColor">#ffffff</color>
+
+    <color name="Blueish">#00BCD4</color>
+
 
 
 </resources>
