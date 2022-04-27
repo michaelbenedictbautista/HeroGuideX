@@ -13,6 +13,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.ait8926.heroguidex.R;
 import com.ait8926.heroguidex.databinding.CollectionFragmentBinding;
@@ -41,38 +42,42 @@ public class CollectionFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(CollectionViewModel.class);
 
-        // Set image to ImageView
-        this.binding.collectionImageView.setImageResource(R.drawable.invoker_collection);
+        try {
+            // Set image to ImageView
+            this.binding.collectionImageView.setImageResource(R.drawable.invoker_collection);
 
-        // Create instance of Bundle
-        Bundle bundle = getArguments();
+            // Create instance of Bundle
+            Bundle bundle = getArguments();
 
-        // collectionBackwardImageButton
-        binding.collectionBackwardImageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            // collectionBackwardImageButton
+            binding.collectionBackwardImageButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-                // Create object for the NavController
-                NavController navController = Navigation.findNavController(view);
+                    // Create object for the NavController
+                    NavController navController = Navigation.findNavController(view);
 
-                //Navigate through resource Id and pass the bundle to the parameter of navController
-                navController.navigate(R.id.action_collectionFragment_to_tutorialFragment, bundle);
-            }
-        });
+                    //Navigate through resource Id and pass the bundle to the parameter of navController
+                    navController.navigate(R.id.action_collectionFragment_to_tutorialFragment, bundle);
+                }
+            });
 
-        // landingForwardImageButton
-        binding.collectionSkipButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            // landingForwardImageButton
+            binding.collectionSkipButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-                // Create object for the Navigation host
-                NavController navController = Navigation.findNavController(view);
+                    // Create object for the Navigation host
+                    NavController navController = Navigation.findNavController(view);
 
-                //navigate through resource Id and pass the bundle to the parameter of navController
-                navController.navigate(R.id.action_collectionFragment_to_landingFragment);
+                    //navigate through resource Id and pass the bundle to the parameter of navController
+                    navController.navigate(R.id.action_collectionFragment_to_landingFragment);
 
-            }
-        });
-
+                }
+            });
+        }catch (Exception exception) {
+            Toast.makeText(getContext(), "System application error occurred. Try again.", Toast.LENGTH_SHORT).show();
+            exception.printStackTrace();
+        }
     }
 }
