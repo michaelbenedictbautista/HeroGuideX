@@ -2,16 +2,11 @@ package com.ait8926.heroguidex.hero.ui;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
-import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.ait8926.heroguidex.R;
 import com.ait8926.heroguidex.databinding.HeroRecyclerViewBinding;
 import com.ait8926.heroguidex.edit_hero.OnItemClickListener;
 import com.ait8926.heroguidex.hero.Hero;
-
 import java.util.List;
 
 public class HeroRecyclerViewAdapter extends RecyclerView.Adapter<HeroViewHolder> {
@@ -33,7 +28,6 @@ public class HeroRecyclerViewAdapter extends RecyclerView.Adapter<HeroViewHolder
         binding = HeroRecyclerViewBinding.inflate(inflater, parent, false);
         HeroViewHolder heroViewHolder = new HeroViewHolder(binding);
         return heroViewHolder;
-
     }
 
     @Override

@@ -22,11 +22,15 @@ public class HeroViewModel extends AndroidViewModel {
     // Constructor which has no return
     public HeroViewModel(@NonNull Application application) {
         super(application);
+        try {
+            heroRepository = new HeroRepository(application);
+            allHeroes = heroRepository.getAllHeroes();
 
-        heroRepository = new HeroRepository(application);
-
-        allHeroes = heroRepository.getAllHeroes();
+        }catch (Exception exception) {
+            exception.printStackTrace();
+        }
     }
+
     public void insert(Hero hero) {
         heroRepository.insert(hero);
     }
