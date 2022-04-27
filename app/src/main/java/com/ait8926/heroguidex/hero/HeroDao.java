@@ -13,6 +13,7 @@ import java.util.List;
 @Dao
 public interface HeroDao {
 
+    // Implementation of queries
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Hero hero);
 
@@ -30,5 +31,4 @@ public interface HeroDao {
 
     @Query("SELECT * FROM HERO")
     LiveData<List<Hero>> findAll();
-
 }

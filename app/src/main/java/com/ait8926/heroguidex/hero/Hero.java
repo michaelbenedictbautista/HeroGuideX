@@ -5,7 +5,6 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
-
 import java.io.Serializable;
 
 @Entity(tableName = "HERO")
@@ -26,14 +25,11 @@ public class Hero implements Serializable {
     private String role;
     private String image;
     private String audio;
-
-
     private int attackDamage;
     private int attackSpeed;
     private int defense;
     private int votes;
     private int rating;
-
 
     // Constructor without parameter
     @Ignore
@@ -144,7 +140,7 @@ public class Hero implements Serializable {
         this.audio = audio;
     }
 
-
+    //To string method
     @NonNull
     @Override
     public String toString() {

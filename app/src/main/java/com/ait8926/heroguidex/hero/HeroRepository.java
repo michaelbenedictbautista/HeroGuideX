@@ -79,10 +79,8 @@ public class HeroRepository {
 
         } catch (ExecutionException e) {
             e.printStackTrace();
-            //e.getMessage();
         } catch (InterruptedException e) {
             e.printStackTrace();
-            //e.getMessage();;
         }
         return hero;
     }
