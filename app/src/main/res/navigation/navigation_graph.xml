@@ -99,5 +99,10 @@
             app:popUpTo="@id/menuFragment"
             app:popUpToInclusive="false" />
     </fragment>
+    <activity
+        android:id="@+id/splashScreen2"
+        android:name="com.ait8926.heroguidex.SplashScreen"
+        android:label="splash_screen"
+        tools:layout="@layout/splash_screen" />
 
 </navigation>
