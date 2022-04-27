@@ -4,8 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.os.Bundle;
-
-import com.ait8926.heroguidex.landing_page.ui.LandingWelcomeFragment;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,19 +13,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-        // This is only for app without navigation
-      /*  if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, LandingWelcomeFragment.newInstance())
-                    .commitNow();
-        }*/
-        // For my later implementation
-        /*getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeActionContentDescription(R.drawable.ic_back);*/
-
+        try  {
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayShowTitleEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setLogo(R.drawable.hero_guide_x_logo_b);
+            getSupportActionBar().setDisplayUseLogoEnabled(true);
+        }catch (Exception exception) {
+            Toast.makeText(this, "System application error occurred. Try again.", Toast.LENGTH_SHORT).show();
+            exception.printStackTrace();
+        }
 
     }
-
 }
-    /*int resourceID = binding.getRoot().getResources().getIdentifier(hero.getImage(), "drawable", binding.getRoot().getContext().getPackageName());
-            this.binding.heroImageView.setImageResource(resourceID);*/
