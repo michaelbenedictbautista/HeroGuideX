@@ -3,7 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    app:circularflow_defaultRadius="300dp"
+    app:circularflow_radiusInDP="300dp"
+    app:layout_constraintCircleRadius="300dp">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -12,7 +15,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:cardBackgroundColor="#66000000"
+        app:cardBackgroundColor="@color/primaryColor"
         app:cardCornerRadius="8dp"
         app:cardElevation="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,11 +29,12 @@
 
             <ImageView
                 android:id="@+id/heroImageView"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
                 android:background="@color/black"
+                android:contentDescription="TODO"
                 android:scaleType="fitStart"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
                 app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
                 app:layout_constraintTop_toTopOf="@+id/guidelineTop"
                 tools:srcCompat="@drawable/hero_1" />
@@ -76,14 +80,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
-                android:text="Name:"
+                android:text="@string/heroNameLabelTextView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/white"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
                 app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-                app:layout_constraintTop_toBottomOf="@+id/heroImageView" />
+                app:layout_constraintTop_toBottomOf="@+id/playAudioImageButton" />
 
             <TextView
                 android:id="@+id/heroHistoryTextView"
@@ -95,6 +99,7 @@
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@color/white"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
                 app:layout_constraintTop_toBottomOf="@+id/heroNameTextView" />
 
@@ -131,61 +136,76 @@
                 android:text="Role:"
                 android:textAlignment="viewStart"
                 android:textColor="@color/white"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
                 app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
                 app:layout_constraintTop_toBottomOf="@+id/heroHistoryTextView" />
 
             <ImageView
                 android:id="@+id/attackSpeedImageView"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/attackSpeedTextView"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/heroImageView"
                 app:layout_constraintStart_toStartOf="@+id/attackDamageImageView"
-                app:layout_constraintTop_toBottomOf="@+id/attackDamageImageView"
+                app:layout_constraintTop_toBottomOf="@+id/attackDamageTextView"
                 app:srcCompat="@drawable/attack_speed" />
 
             <ImageView
                 android:id="@+id/attackDamageImageView"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginEnd="2dp"
-                app:layout_constraintBottom_toBottomOf="@+id/attackDamageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="4dp"
                 app:layout_constraintEnd_toStartOf="@+id/attackDamageTextView"
-                app:layout_constraintTop_toTopOf="@+id/attackDamageTextView"
+                app:layout_constraintStart_toEndOf="@+id/heroImageView"
+                app:layout_constraintTop_toTopOf="@+id/guidelineTop"
                 app:srcCompat="@drawable/attack_damage" />
 
             <ImageView
                 android:id="@+id/defenseImageView"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/defenseTextView"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/heroImageView"
                 app:layout_constraintStart_toStartOf="@+id/attackSpeedImageView"
-                app:layout_constraintTop_toBottomOf="@+id/attackSpeedImageView"
+                app:layout_constraintTop_toBottomOf="@+id/attackSpeedTextView"
                 app:srcCompat="@drawable/hero_defense" />
 
             <TextView
                 android:id="@+id/attackDamageTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:clickable="false"
                 android:text="Damage:"
                 android:textColor="@color/white"
                 android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/attackDamageImageView"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/attackDamageImageView"
+                app:layout_constraintTop_toTopOf="@+id/attackDamageImageView" />
 
             <TextView
                 android:id="@+id/attackSpeedTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
+                android:layout_marginStart="4dp"
                 android:clickable="true"
                 android:text="Speed:"
                 android:textColor="@color/white"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/attackSpeedImageView"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/attackSpeedImageView"
                 app:layout_constraintTop_toTopOf="@+id/attackSpeedImageView" />
 
@@ -193,12 +213,17 @@
                 android:id="@+id/defenseTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="12dp"
                 android:clickable="true"
                 android:text="Defense:"
                 android:textColor="@color/white"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/defenseImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/defenseImageView"
                 app:layout_constraintTop_toTopOf="@+id/defenseImageView" />
 
@@ -206,9 +231,14 @@
                 android:id="@+id/playAudioImageButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:backgroundTint="@color/BlueGreen"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/Blueish"
+                android:elevation="4sp"
                 android:soundEffectsEnabled="true"
+                app:circularflow_defaultRadius="300dp"
+                app:circularflow_radiusInDP="300dp"
+                app:layout_constraintCircleRadius="300dp"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
                 app:layout_constraintStart_toStartOf="@+id/defenseImageView"
                 app:layout_constraintTop_toBottomOf="@+id/defenseTextView"
                 app:srcCompat="@android:drawable/ic_media_play" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Grey"
+    android:background="@color/white"
     tools:context=".edit_hero.EditHeroScrollingFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,10 +17,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
-            android:text="Current audio:"
+            android:text="@string/editAudioLabelTextView"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/editAudioSpinner"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/leftGuideline"
@@ -64,7 +63,7 @@
             android:id="@+id/editTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit hero"
+            android:text="@string/editTitleLabelTextView"
             android:textColor="@color/black"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -93,10 +92,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="4dp"
-            android:text="Current name:"
+            android:text="@string/editNameLabelTextView"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/editNameEditText"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/leftGuideline"
@@ -108,10 +106,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="4dp"
-            android:text="Current role:"
+            android:text="@string/editRoleLabelTextView"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/editRoleSpinner"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/leftGuideline"
@@ -151,10 +148,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="4dp"
-            android:text="Current history:"
+            android:text="@string/editHistoryLabelTextView"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/editHistoryEditText"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/leftGuideline"
@@ -166,10 +162,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="4dp"
-            android:text="Current damage"
+            android:text="@string/editDamageLabelTextView"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/editDamageSeekBar"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/leftGuideline"
@@ -181,10 +176,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
-            android:text="Current speed:"
+            android:text="@string/editCurrentSpeedLabelTextView"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/editSpeedSeekBar"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/leftGuideline"
@@ -211,10 +205,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
-            android:text="Current defense:"
+            android:text="@string/editDefenseLabelTextView"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/editDefenseSeekBar"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/leftGuideline"
@@ -259,19 +252,21 @@
             android:layout_marginTop="28dp"
             android:layout_marginEnd="24dp"
             android:adjustViewBounds="true"
+            android:contentDescription="TODO"
             android:scaleType="fitXY"
             android:src="@drawable/hero_6"
             app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
             app:layout_constraintHorizontal_bias="0.607"
             app:layout_constraintStart_toStartOf="@+id/leftGuideline"
-            app:layout_constraintTop_toBottomOf="@+id/editTitleTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/editTitleTextView"
+            tools:ignore="ImageContrastCheck" />
 
         <TextView
             android:id="@+id/editImageTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Select new image?"
+            android:text="@string/editSelectNewImageLabelTextView"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -294,15 +289,17 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:backgroundTint="@color/BlueGreen"
-            android:text="Save"
+            android:backgroundTint="@color/Blueish"
+            android:elevation="4sp"
+            android:text="@string/editHeroLabelSaveButton"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/editHeroCancelButton"
             app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/editHeroCancelButton"
-            app:layout_constraintTop_toTopOf="@+id/editHeroCancelButton" />
+            app:layout_constraintTop_toTopOf="@+id/editHeroCancelButton"
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/editHeroCancelButton"
@@ -311,7 +308,8 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="4dp"
             android:backgroundTint="#00A6A6A6"
-            android:text="Cancel"
+            android:elevation="4sp"
+            android:text="@string/editHeroLabelCancelButton"
             android:textColor="@color/black"
             app:layout_constraintEnd_toStartOf="@+id/editHeroSaveButton"
             app:layout_constraintHorizontal_bias="0.5"
@@ -330,7 +328,8 @@
             android:visibility="visible"
             app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
             app:layout_constraintTop_toBottomOf="@+id/editDamageSeekBar"
-            tools:text="0-100" />
+            tools:ignore="TextContrastCheck"
+            tools:text="0/100" />
 
         <TextView
             android:id="@+id/editSpdProgTextView"
@@ -342,7 +341,8 @@
             android:visibility="visible"
             app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
             app:layout_constraintTop_toBottomOf="@+id/editSpeedSeekBar"
-            tools:text="0-100" />
+            tools:ignore="TextContrastCheck"
+            tools:text="0/100" />
 
         <TextView
             android:id="@+id/editDefProgTextView"
@@ -354,7 +354,8 @@
             android:visibility="visible"
             app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
             app:layout_constraintTop_toBottomOf="@+id/editDefenseSeekBar"
-            tools:text="0-100" />
+            tools:ignore="TextContrastCheck"
+            tools:text="0/100" />
 
         <ImageView
             android:id="@+id/editCurrentImageImageView"
@@ -365,14 +366,15 @@
             android:scaleType="fitXY"
             android:src="@drawable/hero_6"
             app:layout_constraintStart_toStartOf="@+id/editImageImageView"
-            app:layout_constraintTop_toBottomOf="@+id/editImageSpinner" />
+            app:layout_constraintTop_toBottomOf="@+id/editImageSpinner"
+            tools:ignore="ImageContrastCheck" />
 
         <TextView
             android:id="@+id/editCurrentImageTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="Current image"
+            android:text="@string/editCurrentImageLabelTextView"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/editCurrentImageImageView"

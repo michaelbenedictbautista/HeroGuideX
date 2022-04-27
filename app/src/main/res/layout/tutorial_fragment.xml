@@ -2,7 +2,6 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -46,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
             android:adjustViewBounds="true"
-            android:contentDescription="Tutorial image"
+            android:contentDescription="@string/tutorial_imageContentDescription"
             android:scaleType="fitXY"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
@@ -59,15 +58,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
-            android:backgroundTint="@color/BlueGreen"
+            android:backgroundTint="@color/Blueish"
             android:baselineAlignBottom="false"
-            android:elevation="8sp"
+            android:elevation="4sp"
             android:longClickable="false"
             android:minHeight="48dp"
             android:src="@drawable/ic_forward"
             app:layout_constraintBottom_toBottomOf="@+id/tutorialImageView"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
-            app:layout_constraintTop_toTopOf="@+id/tutorialImageView" />
+            app:layout_constraintTop_toTopOf="@+id/tutorialImageView"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/tutorialCreateHeroTextView"
@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:lineSpacingExtra="10sp"
-            android:text="Heroes are the essential element of Dota 2, as the course of the match is dependent on their intervention. During a match, two opposing teams select five out of 123 heroes that accumulate experience and gold to grow stronger and gain new abilities in order to destroy the opponent's Ancient."
+            android:text="@string/tutorialDescriptionTextView"
             android:textAlignment="center"
             android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
@@ -99,32 +99,33 @@
             android:id="@+id/tutorialSkipButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:backgroundTint="@color/BlueGreen"
-            android:elevation="8sp"
-            android:text="SKIP"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/Blueish"
+            android:elevation="4sp"
+            android:text="@string/tutorialSkipLabelButton"
             android:textAlignment="center"
             android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@+id/tutorialDescriptionTextView"
-            app:layout_constraintVertical_bias="0.906" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <ImageButton
             android:id="@+id/tutorialBackwardImageButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
-            android:backgroundTint="@color/BlueGreen"
+            android:backgroundTint="@color/Blueish"
             android:baselineAlignBottom="false"
-            android:elevation="8sp"
+            android:elevation="4sp"
             android:minHeight="48dp"
             android:src="@drawable/ic_back"
             app:layout_constraintBottom_toBottomOf="@+id/tutorialImageView"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toTopOf="@+id/tutorialImageView" />
+            app:layout_constraintTop_toTopOf="@+id/tutorialImageView"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

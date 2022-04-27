@@ -2,10 +2,10 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
+
     tools:context=".landing_page.ui.LandingWelcomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -48,18 +48,17 @@
             android:id="@+id/landingLetsStartButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:backgroundTint="@color/BlueGreen"
-            android:elevation="8sp"
+            android:backgroundTint="@color/Blueish"
+            android:elevation="4sp"
             android:text="@string/landingLetsStartButton"
             android:textAlignment="center"
             android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/landingBGuide"
             app:layout_constraintEnd_toStartOf="@+id/landingRGuideline"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/landingLGuide"
-            app:layout_constraintTop_toBottomOf="@+id/landingNameEditText"
-            app:layout_constraintVertical_bias="0.954" />
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/landingWelcomeTextView"
@@ -74,39 +73,6 @@
             app:layout_constraintStart_toStartOf="@+id/landingLGuide"
             app:layout_constraintTop_toTopOf="@+id/landingTGuide" />
 
-        <TextView
-            android:id="@+id/landingNameTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
-            android:layout_marginEnd="4dp"
-            android:text="* Name:"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/landingNameEditText"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@+id/landingLGuide"
-            app:layout_constraintTop_toBottomOf="@+id/landingWelcomeImageView" />
-
-        <EditText
-            android:id="@+id/landingNameEditText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:ems="10"
-            android:hint="Enter name here..."
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:textColorHint="@color/Grey"
-            android:textSize="20sp"
-            android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="@+id/landingNameTextView"
-            app:layout_constraintEnd_toStartOf="@+id/landingRGuideline"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/landingNameTextView"
-            app:layout_constraintTop_toTopOf="@+id/landingNameTextView"
-            app:layout_constraintVertical_bias="0.517" />
-
         <ImageView
             android:id="@+id/landingWelcomeImageView"
             android:layout_width="0dp"
@@ -119,21 +85,53 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/landingLGuide"
             app:layout_constraintTop_toBottomOf="@+id/landingWelcomeTextView"
-            tools:src="@drawable/ember_landing" />
+            tools:src="@drawable/pudge_banner" />
 
         <ImageButton
             android:id="@+id/landingForwardImageButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/BlueGreen"
+            android:background="@color/Blueish"
             android:backgroundTint="#FFFFFF"
             android:backgroundTintMode="multiply"
-            android:elevation="8sp"
+            android:elevation="4sp"
             android:minHeight="48dp"
             android:src="@drawable/ic_forward"
             app:layout_constraintBottom_toBottomOf="@+id/landingWelcomeImageView"
             app:layout_constraintEnd_toStartOf="@+id/landingRGuideline"
-            app:layout_constraintTop_toTopOf="@+id/landingWelcomeImageView" />
+            app:layout_constraintTop_toTopOf="@+id/landingWelcomeImageView"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/landingIntroTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:lineSpacingExtra="10sp"
+            android:text="@string/landingIntroTextView"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/landingRGuideline"
+            app:layout_constraintStart_toStartOf="@+id/landingLGuide"
+            app:layout_constraintTop_toBottomOf="@+id/landingWelcomeImageView" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/landingRGuideline"
+            app:layout_constraintStart_toStartOf="@+id/landingLGuide"
+            app:layout_constraintTop_toBottomOf="@+id/landingIntroTextView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/landingNameTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter name here..."
+                android:textColorHint="@android:color/darker_gray"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
